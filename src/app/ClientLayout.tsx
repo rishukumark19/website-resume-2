@@ -16,7 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
-  { href: "/", label: "@shrutikcs", icon: null },
+  { href: "/", label: "@RishuK", icon: null },
   { href: "/experience", label: "experience", icon: FiBriefcase },
   { href: "/projects", label: "projects", icon: FiCode },
   { href: "/education", label: "education", icon: FiBookOpen },
@@ -54,6 +54,9 @@ function Navigation() {
     ).matches;
     setTheme(prefersDark ? "dark" : "light");
     setMounted(true);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 50;
       setScrolled(isScrolled);
@@ -185,9 +188,7 @@ function Navigation() {
                 href="/"
                 className="px-3 py-1.5 text-sm font-medium hover:text-foreground transition-colors flex items-center gap-2"
               >
-                <span className="text-muted-foreground font-bold">
-                  shrutikcs
-                </span>
+                <span className="text-muted-foreground font-bold">RishuK</span>
                 <span className="text-muted-foreground/50">/</span>
                 <span className="text-foreground capitalize">
                   {currentPageLabel}
@@ -250,7 +251,7 @@ export default function ClientLayout({
         <footer className="border-t border-border/50 py-8">
           <div className="container max-w-4xl mx-auto px-4">
             <p className="text-sm text-muted-foreground text-center">
-              © {new Date().getFullYear()} Shrutik Meshram
+              © {new Date().getFullYear()} Rishu Kumar
             </p>
           </div>
         </footer>

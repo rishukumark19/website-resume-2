@@ -15,8 +15,10 @@ import {
 } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi2";
 import {
+  SiCss3,
   SiFramer,
   SiGraphql,
+  SiHtml5,
   SiJavascript,
   SiMongodb,
   SiNextdotjs,
@@ -57,11 +59,15 @@ export type TechType =
   | "npm"
   | "github"
   | "ethereum"
+  | "html"
+  | "css"
   | "defi";
 
 const techIcons: Record<TechType, React.ReactNode> = {
   typescript: <SiTypescript />,
   javascript: <SiJavascript />,
+  html: <SiHtml5 />,
+  css: <SiCss3 />,
   react: <FaReact />,
   next: <SiNextdotjs />,
   node: <FaNodeJs />,
@@ -91,6 +97,8 @@ const techIcons: Record<TechType, React.ReactNode> = {
 const techNames: Record<TechType, string> = {
   typescript: "TypeScript",
   javascript: "JavaScript",
+  html: "HTML5",
+  css: "CSS3",
   react: "React",
   next: "Next.js",
   node: "Node.js",
@@ -121,6 +129,8 @@ const techNames: Record<TechType, string> = {
 const techGroupHoverColors: Record<TechType, string> = {
   typescript: "group-hover:text-blue-500",
   javascript: "group-hover:text-yellow-500",
+  html: "group-hover:text-orange-600",
+  css: "group-hover:text-blue-600",
   react: "group-hover:text-cyan-400",
   next: "group-hover:text-foreground",
   node: "group-hover:text-green-500",

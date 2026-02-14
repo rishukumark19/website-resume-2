@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { FiHome, FiMapPin, FiRepeat, FiWifi } from "react-icons/fi";
+import {
+  FiBriefcase,
+  FiHome,
+  FiMapPin,
+  FiRepeat,
+  FiUsers,
+  FiWifi,
+} from "react-icons/fi";
 import { LinkButton } from "@/components/ui/link-button";
 import { PageTransition } from "@/components/ui/page-transition";
 import experiences from "@/data/experiences.json";
@@ -66,81 +73,167 @@ export default function Experience() {
           <div className="absolute left-0 top-2 bottom-2 w-px bg-border" />
 
           <div className="space-y-12">
-            {publishedExperiences.map((experience) => (
-              <div key={experience.id} className="relative pl-8">
-                {/* Timeline dot */}
-                <div
-                  className={`absolute left-0 top-2 w-2 h-2 rounded-full -translate-x-[3px] ${
-                    experience.current
-                      ? "bg-accent ring-4 ring-accent/20"
-                      : "bg-muted-foreground/50"
-                  }`}
-                />
+            {/* Work Experience */}
+            <div>
+              <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <FiBriefcase className="w-5 h-5" />
+                Work Experience
+              </h2>
+              <div className="space-y-12">
+                {publishedExperiences
+                  .filter((exp) => exp.category === "work" || !exp.category)
+                  .map((experience) => (
+                    <div key={experience.id} className="relative pl-8">
+                      {/* Timeline dot */}
+                      <div
+                        className={`absolute left-0 top-2 w-2 h-2 rounded-full -translate-x-[3px] ${
+                          experience.current
+                            ? "bg-accent ring-4 ring-accent/20"
+                            : "bg-muted-foreground/50"
+                        }`}
+                      />
 
-                {/* Card */}
-                <div className="group">
-                  <div className="flex items-start justify-between gap-4 mb-2">
-                    <div>
-                      <div className="flex items-center gap-2">
-                        <h2 className="text-lg font-semibold">
-                          {experience.link ? (
-                            <LinkButton
-                              href={experience.link}
-                              target="_blank"
-                              className="text-lg"
-                            >
-                              {experience.company}
-                            </LinkButton>
-                          ) : (
-                            experience.company
-                          )}
-                        </h2>
-                        {experience.current && (
-                          <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-accent/10 text-accent">
-                            Current
+                      {/* Card */}
+                      <div className="group">
+                        <div className="flex items-start justify-between gap-4 mb-2">
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-lg font-semibold">
+                                {experience.link ? (
+                                  <LinkButton
+                                    href={experience.link}
+                                    target="_blank"
+                                    className="text-lg"
+                                  >
+                                    {experience.company}
+                                  </LinkButton>
+                                ) : (
+                                  experience.company
+                                )}
+                              </h3>
+                              {experience.current && (
+                                <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-accent/10 text-accent">
+                                  Current
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-muted-foreground font-medium">
+                              {experience.position}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4">
+                          <span>{experience.period}</span>
+                          <span className="flex items-center gap-1">
+                            <FiMapPin className="w-3 h-3" />
+                            {experience.location}
                           </span>
-                        )}
+                          {(() => {
+                            const badge = getWorkTypeBadge(experience.workType);
+                            const Icon = badge.icon;
+                            return (
+                              <span
+                                className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${badge.className}`}
+                              >
+                                <Icon className="w-3 h-3" />
+                                {badge.label}
+                              </span>
+                            );
+                          })()}
+                        </div>
+
+                        <ul className="space-y-2">
+                          {experience.description.map((item, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-3 text-muted-foreground text-sm"
+                            >
+                              <span className="w-1 h-1 rounded-full bg-muted-foreground/50 mt-2 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
                       </div>
-                      <p className="text-muted-foreground font-medium">
-                        {experience.position}
-                      </p>
                     </div>
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4">
-                    <span>{experience.period}</span>
-                    <span className="flex items-center gap-1">
-                      <FiMapPin className="w-3 h-3" />
-                      {experience.location}
-                    </span>
-                    {(() => {
-                      const badge = getWorkTypeBadge(experience.workType);
-                      const Icon = badge.icon;
-                      return (
-                        <span
-                          className={`flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium ${badge.className}`}
-                        >
-                          <Icon className="w-3 h-3" />
-                          {badge.label}
-                        </span>
-                      );
-                    })()}
-                  </div>
-
-                  <ul className="space-y-2">
-                    {experience.description.map((item, i) => (
-                      <li
-                        key={i}
-                        className="flex items-start gap-3 text-muted-foreground text-sm"
-                      >
-                        <span className="w-1 h-1 rounded-full bg-muted-foreground/50 mt-2 flex-shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                  ))}
               </div>
-            ))}
+            </div>
+
+            {/* Leadership & Involvement */}
+            <div className="pt-8">
+              <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
+                <FiUsers className="w-5 h-5" />
+                Leadership & Involvement
+              </h2>
+              <div className="space-y-12">
+                {publishedExperiences
+                  .filter((exp) => exp.category === "leadership")
+                  .map((experience) => (
+                    <div key={experience.id} className="relative pl-8">
+                      {/* Timeline dot */}
+                      <div
+                        className={`absolute left-0 top-2 w-2 h-2 rounded-full -translate-x-[3px] ${
+                          experience.current
+                            ? "bg-accent ring-4 ring-accent/20"
+                            : "bg-muted-foreground/50"
+                        }`}
+                      />
+
+                      {/* Card */}
+                      <div className="group">
+                        <div className="flex items-start justify-between gap-4 mb-2">
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <h3 className="text-lg font-semibold">
+                                {experience.link ? (
+                                  <LinkButton
+                                    href={experience.link}
+                                    target="_blank"
+                                    className="text-lg"
+                                  >
+                                    {experience.company}
+                                  </LinkButton>
+                                ) : (
+                                  experience.company
+                                )}
+                              </h3>
+                              {experience.current && (
+                                <span className="px-2 py-0.5 text-xs font-medium rounded-full bg-accent/10 text-accent">
+                                  Current
+                                </span>
+                              )}
+                            </div>
+                            <p className="text-muted-foreground font-medium">
+                              {experience.position}
+                            </p>
+                          </div>
+                        </div>
+
+                        <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mb-4">
+                          <span>{experience.period}</span>
+                          <span className="flex items-center gap-1">
+                            <FiMapPin className="w-3 h-3" />
+                            {experience.location}
+                          </span>
+                        </div>
+
+                        <ul className="space-y-2">
+                          {experience.description.map((item, i) => (
+                            <li
+                              key={i}
+                              className="flex items-start gap-3 text-muted-foreground text-sm"
+                            >
+                              <span className="w-1 h-1 rounded-full bg-muted-foreground/50 mt-2 flex-shrink-0" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
           </div>
         </div>
       </div>

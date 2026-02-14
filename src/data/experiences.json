@@ -6,6 +6,7 @@
     "period": "Jan 2024 - Present",
     "location": "Remote",
     "workType": "remote",
+    "category": "work",
     "description": [
       "Collaborating in structured development workflows and improving frontend code quality.",
       "Learning production-level practices including clean architecture and framework."
@@ -22,6 +23,7 @@
     "period": "Aug 2023 - Dec 2023",
     "location": "Remote",
     "workType": "remote",
+    "category": "work",
     "description": [
       "Built multiple responsive client websites end-to-end using modern UI practices.",
       "Managed UI design, development, and delivery while communicating with clients."
@@ -38,6 +40,7 @@
     "period": "2024 - 2025",
     "location": "NITK",
     "workType": "onsite",
+    "category": "leadership",
     "description": [
       "Led technical projects, workshops, and outreach programs improving participation and collaborations."
     ],
@@ -53,6 +56,7 @@
     "period": "2023 - 2024",
     "location": "NITK",
     "workType": "onsite",
+    "category": "leadership",
     "description": [
       "Designed digital campaigns increasing engagement by 50% and managed analytics-driven outreach."
     ],
@@ -68,6 +72,7 @@
     "period": "2022 - 2023",
     "location": "NITK",
     "workType": "onsite",
+    "category": "leadership",
     "description": [
       "Built responsive web applications and collaborated on frontend and backend projects."
     ],

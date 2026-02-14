@@ -11,7 +11,7 @@ interface Project {
   title: string;
   description: string;
   technologies: string[];
-  link: string;
+  link: string | null;
   twitter?: string;
   type: string;
   period: string;
@@ -36,7 +36,7 @@ const getTypeBadge = (type: string) => {
     case "AI":
       return "AI";
     default:
-      return "Website";
+      return type;
   }
 };
 
@@ -54,12 +54,16 @@ export function ProjectCard({ project, size = "medium" }: ProjectCardProps) {
         isSmall && "p-4",
       )}
     >
-      <Link
-        href={project.link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="absolute inset-0 z-10"
-      />
+      {project.link ? (
+        <Link
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute inset-0 z-10"
+        />
+      ) : (
+        <div className="absolute inset-0 z-0" />
+      )}
       {/* Header */}
       <div className="flex items-start justify-between gap-4 mb-3">
         <div className="flex-1">

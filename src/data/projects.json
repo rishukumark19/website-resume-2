@@ -1,26 +1,50 @@
 [
   {
-    "id": "react-quiz-app",
-    "title": "React Quiz Web Application",
+    "id": "tech-company-website",
+    "title": "Tech Company Website",
     "period": "",
-    "description": "Component-based architecture with clean folder structure and accessibility-focused design using React, JavaScript, and Tailwind. Implemented scalable UI and optimized performance.",
+    "description": "Built a fully responsive website focused on UX principles and content hierarchy.",
     "link": null,
-    "type": "Website",
-    "technologies": ["React", "JavaScript", "Tailwind"],
+    "type": "CORPORATE",
+    "technologies": ["html", "css", "javascript"],
     "featured": true,
     "order": 0,
     "published": true
   },
   {
-    "id": "tech-company-website",
-    "title": "Tech Company Website",
+    "id": "react-quiz-app",
+    "title": "React Quiz Web Application",
     "period": "",
-    "description": "Built a fully responsive website focused on UX principles and content hierarchy using HTML, CSS, and JavaScript.",
+    "description": "Component-based architecture with clean folder structure and accessibility-focused design. Implemented scalable UI and optimized performance using modern React practices.",
     "link": null,
-    "type": "Website",
-    "technologies": ["HTML", "CSS", "JavaScript"],
+    "type": "WEB APP",
+    "technologies": ["react", "javascript", "tailwind"],
     "featured": true,
     "order": 1,
+    "published": true
+  },
+  {
+    "id": "personal-portfolio",
+    "title": "Personal Portfolio",
+    "period": "",
+    "description": "This modern professional portfolio website. Showcases my projects and full-stack development journey with a focus on performance and accessibility.",
+    "link": null,
+    "type": "PORTFOLIO",
+    "technologies": ["tailwind", "javascript", "github"],
+    "featured": true,
+    "order": 2,
+    "published": true
+  },
+  {
+    "id": "political-portfolio",
+    "title": "Political Portfolio Website",
+    "period": "",
+    "description": "Designed and developed a comprehensive portfolio website from scratch for a public figure. Managed end-to-end deployment and ongoing maintenance for high performance.",
+    "link": null,
+    "type": "FREELANCE / LIVE",
+    "technologies": ["html", "css", "javascript"],
+    "featured": true,
+    "order": 3,
     "published": true
   }
 ]

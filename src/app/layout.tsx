@@ -33,24 +33,24 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Shrutik Meshram - Software Developer",
-    template: "%s | Shrutik Meshram",
+    default: "Rishu Kumar - Frontend Developer",
+    template: "%s | Rishu Kumar",
   },
   description:
-    "Software developer specializing in real-time systems, open source, and modern web development with Next.js, React, TypeScript, and Bun.",
+    "Frontend Developer focused on building fast, clean, and scalable web applications using React and modern JavaScript.",
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Shrutik Meshram - Software Developer",
+    title: "Rishu Kumar - Frontend Developer",
     description:
-      "Software developer building real-time, scalable products with Next.js, React, TypeScript, and Bun.",
-    siteName: "Shrutik Meshram",
+      "Frontend Developer building scalable web applications with React, Tailwind CSS, and modern JavaScript.",
+    siteName: "Rishu Kumar",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Shrutik Meshram - Software Developer",
+    title: "Rishu Kumar - Frontend Developer",
     description:
-      "Software developer building real-time, scalable products with modern web tooling.",
+      "Frontend Developer focused on building fast, clean, and scalable web applications using React and modern JavaScript.",
   },
   robots: {
     index: true,
