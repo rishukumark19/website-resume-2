@@ -2,7 +2,7 @@
   {
     "id": "email",
     "name": "Email",
-    "url": "mailto:shrutik.mesh@gmail.com",
+    "url": "mailto:rishukumar.work@gmail.com",
     "icon": "FiMail",
     "order": 0,
     "published": true
@@ -10,7 +10,7 @@
   {
     "id": "linkedin",
     "name": "LinkedIn",
-    "url": "https://www.linkedin.com/in/shrutikcs/",
+    "url": "https://linkedin.com/in/rishu-kumar-work",
     "icon": "FaLinkedin",
     "order": 1,
     "published": true
@@ -18,24 +18,24 @@
   {
     "id": "github",
     "name": "GitHub",
-    "url": "https://github.com/shrutikcs",
+    "url": "https://github.com/rishukumar39",
     "icon": "FaGithub",
     "order": 2,
     "published": true
   },
   {
-    "id": "twitter",
-    "name": "X",
-    "url": "https://x.com/shrutikcs",
-    "icon": "FaXTwitter",
+    "id": "resume",
+    "name": "Resume",
+    "url": "/Rishu_kumar_Resume_Dev.pdf",
+    "icon": "FiFileText",
     "order": 3,
     "published": true
   },
   {
-    "id": "leetcode",
-    "name": "LeetCode",
-    "url": "https://leetcode.com/u/shrutikcs/",
-    "icon": "SiLeetcode",
+    "id": "codeforces",
+    "name": "Codeforces",
+    "url": "https://codeforces.com/profile/rishukumark19",
+    "icon": "SiCodeforces",
     "order": 4,
     "published": true
   }

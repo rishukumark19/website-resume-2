@@ -1,68 +1,78 @@
 [
   {
-    "id": "open-source-2026",
-    "company": "Open Source: Convex",
-    "position": "Contributor",
-    "period": "Jan 2026 - Present",
+    "id": "dataneuron-2024",
+    "company": "DataNeuron",
+    "position": "Full Stack Developer Intern",
+    "period": "Jan 2024 - Present",
     "location": "Remote",
     "workType": "remote",
     "description": [
-      "Fixed a production bug in Convex's Next.js auth that hung indefinitely in Bun runtime, diagnosing root causes: read-only Headers + Content-Length header forwarding issues",
-      "Submitted PR #253 with selective header fix, passed AI review & automated checks"
+      "Collaborating in structured development workflows and improving frontend code quality.",
+      "Learning production-level practices including clean architecture and framework."
     ],
     "current": true,
     "order": 0,
     "published": true,
-    "link": "https://github.com/get-convex/better-auth/pull/253"
+    "link": null
   },
   {
-    "id": "engineer-nitk-2024",
-    "company": "ENGINEER, NITK",
-    "position": "Core Organizer",
-    "period": "Jun 2024 - Oct 2024",
-    "location": "Surathkal, Karnataka",
-    "workType": "onsite",
+    "id": "crosstech-2023",
+    "company": "CrossTech",
+    "position": "Freelance Frontend Developer",
+    "period": "Aug 2023 - Dec 2023",
+    "location": "Remote",
+    "workType": "remote",
     "description": [
-      "Handled the entire tech fest with a crew of 10 people, scheduling 30+ events across 3 days. Hackathons, gaming tournaments, alumni talks, and PRO shows",
-      "Ran the 24-hour Wells Fargo hackathon with the team, handling live issues for a high-stakes event",
-      "Managed artist coordination end-to-end, from inviting Vivek Samtani to airport pickup and timing the stage",
-      "Led gaming tournaments including skill-based matchmaking for Valorant, handling logistics such as consoles and peripherals",
-      "Oversaw event merch distribution, sales, and handled real-time crises across a fest attended by 5,000+ participants"
+      "Built multiple responsive client websites end-to-end using modern UI practices.",
+      "Managed UI design, development, and delivery while communicating with clients."
     ],
     "current": false,
     "order": 1,
     "published": true,
-    "link": "https://engineer.nitk.ac.in/"
+    "link": null
   },
   {
-    "id": "ecell-nitk-2021",
-    "company": "E-Cell NITK",
-    "position": "Executive Member",
-    "period": "Dec 2021 - Jun 2024",
-    "location": "Surathkal, Karnataka",
+    "id": "sae-nitk-2024",
+    "company": "SAE NITK",
+    "position": "President",
+    "period": "2024 - 2025",
+    "location": "NITK",
     "workType": "onsite",
     "description": [
-      "Handled ops, content, and event management for the campus entrepreneurship cell",
-      "Organized large-scale events like a trading competition with 700+ participants and helped run the flagship fest E-Summit",
-      "Ran Instagram content - created, edited, and directed reels interviewing students about personal finance"
+      "Led technical projects, workshops, and outreach programs improving participation and collaborations."
     ],
     "current": false,
     "order": 2,
     "published": true,
-    "link": "https://ecell.nitk.ac.in/"
+    "link": null
   },
   {
-    "id": "lsd-nitk-2022",
-    "company": "Literary, Stage and Debating Society NITK",
-    "position": "Executive Member",
-    "period": "Jul 2022 - Jun 2024",
-    "location": "Surathkal, Karnataka",
+    "id": "nss-nitk-2023",
+    "company": "NSS NITK",
+    "position": "Publicity Head",
+    "period": "2023 - 2024",
+    "location": "NITK",
     "workType": "onsite",
     "description": [
-      "Contributed to video editing and film production for campus literary and stage events"
+      "Designed digital campaigns increasing engagement by 50% and managed analytics-driven outreach."
     ],
     "current": false,
     "order": 3,
+    "published": true,
+    "link": null
+  },
+  {
+    "id": "web-club-2022",
+    "company": "Web Enthusiasts Club",
+    "position": "Contributor",
+    "period": "2022 - 2023",
+    "location": "NITK",
+    "workType": "onsite",
+    "description": [
+      "Built responsive web applications and collaborated on frontend and backend projects."
+    ],
+    "current": false,
+    "order": 4,
     "published": true,
     "link": null
   }

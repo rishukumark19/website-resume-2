@@ -4,8 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { FiCheck, FiMail } from "react-icons/fi";
-import { SiLeetcode } from "react-icons/si";
+import { FiCheck, FiFileText, FiMail } from "react-icons/fi";
+import { SiCodeforces, SiLeetcode } from "react-icons/si";
 import { LinkButton } from "@/components/ui/link-button";
 import { PageTransition } from "@/components/ui/page-transition";
 import personalInfo from "@/data/personal-info.json";
@@ -14,10 +14,12 @@ import socialLinks from "@/data/social-links.json";
 const IconMap: { [key: string]: React.ComponentType<{ className?: string }> } =
   {
     FiMail: FiMail,
+    FiFileText: FiFileText,
     FaLinkedin,
     FaGithub,
     FaXTwitter,
     SiLeetcode,
+    SiCodeforces,
   };
 
 function parseTextWithLinks(text: string): React.ReactNode[] {
