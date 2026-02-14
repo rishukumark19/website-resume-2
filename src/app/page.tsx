@@ -87,7 +87,7 @@ export default function Home() {
                 src="/2.png"
                 height={112}
                 width={112}
-                alt="Shrutik Meshram"
+                alt="Rishu Kumar"
                 className="object-cover w-full h-full "
               />
             </div>

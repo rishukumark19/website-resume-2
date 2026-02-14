@@ -53,8 +53,10 @@ export const metadata: Metadata = {
       "Frontend Developer focused on building fast, clean, and scalable web applications using React and modern JavaScript.",
   },
   robots: {
-    index: true,
     follow: true,
+  },
+  icons: {
+    icon: "/2.png",
   },
 };
 
