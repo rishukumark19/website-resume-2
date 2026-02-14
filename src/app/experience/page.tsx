@@ -1,4 +1,7 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { cn } from "@/lib/utils";
 import {
   FiBriefcase,
   FiHome,
@@ -40,17 +43,33 @@ const getWorkTypeBadge = (workType: string) => {
   }
 };
 
-export const metadata: Metadata = {
-  title: "Experience | Shrutik Meshram",
-  description: "My journey - open source, and leadership",
-  openGraph: {
-    title: "Experience | Shrutik Meshram",
-    description: "My journey - open source, and leadership",
-  },
-};
-
 export default function Experience() {
   const publishedExperiences = experiences.filter((exp) => exp.published);
+
+  const [activeId, setActiveId] = useState<string>("");
+  const observer = useRef<IntersectionObserver | null>(null);
+
+  useEffect(() => {
+    if (publishedExperiences.length > 0) {
+      setActiveId(publishedExperiences[0].id);
+    }
+
+    observer.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveId(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-20% 0px -45% 0px", threshold: 0.1 },
+    );
+
+    const elements = document.querySelectorAll(".experience-item");
+    elements.forEach((el) => observer.current?.observe(el));
+
+    return () => observer.current?.disconnect();
+  }, []);
 
   return (
     <PageTransition>
@@ -83,14 +102,19 @@ export default function Experience() {
                 {publishedExperiences
                   .filter((exp) => exp.category === "work" || !exp.category)
                   .map((experience) => (
-                    <div key={experience.id} className="relative pl-8">
+                    <div
+                      key={experience.id}
+                      id={experience.id}
+                      className="experience-item relative pl-8"
+                    >
                       {/* Timeline dot */}
                       <div
-                        className={`absolute left-0 top-2 w-2 h-2 rounded-full -translate-x-[3px] ${
-                          experience.current
-                            ? "bg-accent ring-4 ring-accent/20"
-                            : "bg-muted-foreground/50"
-                        }`}
+                        className={cn(
+                          "absolute left-0 top-2 w-2 h-2 rounded-full -translate-x-[3px] transition-all duration-300",
+                          activeId === experience.id
+                            ? "bg-green-500 ring-4 ring-green-500/20 scale-125 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse"
+                            : "bg-muted-foreground/30 hover:bg-green-500/50",
+                        )}
                       />
 
                       {/* Card */}
@@ -170,14 +194,19 @@ export default function Experience() {
                 {publishedExperiences
                   .filter((exp) => exp.category === "leadership")
                   .map((experience) => (
-                    <div key={experience.id} className="relative pl-8">
+                    <div
+                      key={experience.id}
+                      id={experience.id}
+                      className="experience-item relative pl-8"
+                    >
                       {/* Timeline dot */}
                       <div
-                        className={`absolute left-0 top-2 w-2 h-2 rounded-full -translate-x-[3px] ${
-                          experience.current
-                            ? "bg-accent ring-4 ring-accent/20"
-                            : "bg-muted-foreground/50"
-                        }`}
+                        className={cn(
+                          "absolute left-0 top-2 w-2 h-2 rounded-full -translate-x-[3px] transition-all duration-300",
+                          activeId === experience.id
+                            ? "bg-green-500 ring-4 ring-green-500/20 scale-125 shadow-[0_0_10px_rgba(34,197,94,0.5)] animate-pulse"
+                            : "bg-muted-foreground/30 hover:bg-green-500/50",
+                        )}
                       />
 
                       {/* Card */}
